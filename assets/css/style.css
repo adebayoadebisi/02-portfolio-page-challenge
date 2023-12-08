@@ -568,7 +568,7 @@ figcaption h3, figcaption p {
   
   #portfolio {
     margin: 0px -15px;
-    width: 105%;
+    width: 98%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 400px 200px 200px;
@@ -635,4 +635,51 @@ figcaption h3, figcaption p {
     font-size: 15px;
     font-weight: light bold;
   }
+}
+
+/* > 2500px */
+@media only screen and (min-width: 2500px) {
+  .page-wrapper {
+    display: grid;
+    gap: 45px 0px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 450px 800px 120px;
+    grid-template-areas:
+    "about aboutcontent"
+    "work portfolio"
+    "contact contactnav";
+    }
+    
+  #about {
+    grid-area: about;
+    border-right: 4px solid var(--text-colors);
+  }
+  
+  #aboutcontent {
+    grid-area: aboutcontent;
+    margin-left: 3%;
+    font-size: 30px;
+  }
+  
+  #work {
+    grid-area: work;
+    border-right: 4px solid var(--text-colors);
+  }
+  
+  #portfolio {
+    grid-area: portfolio;
+    margin-left: 3%;
+  }
+  
+  #contact {
+    grid-area: contact;
+    border-right: 4px solid var(--text-colors);
+  }
+  
+  #contactnav {
+    grid-area: contactnav;
+  }
+  
 }
