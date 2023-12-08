@@ -1,3 +1,10 @@
+:root {
+  --text-colors: #213159;
+  --highlight-colors: #f04b4c;
+  --background-color: #e7e7e7;
+  --hero-color: #3d6098;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,91 +23,141 @@ h4,
 h5,
 h6 {
   margin: 0;
+  color: var(--text-colors);
 }
 
 p {
   margin: 0;
+  color: var(--text-colors);
 }
 
 ul {
   list-style: none;
 }
 
-/* Navihgation Bar */
+/* Navigation Bar */
 
 header {
-  background-color: #31343d;
+  background-color: var(--background-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1%;
+  padding: 1% 1% 1% 0%;
 }
 
 .navitems {
   display: flex;
   justify-content: space-evenly;
-  width: 370px;
+  width: 450px;
   padding-right: 30px;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  }
+
+header h1 {
+  background-color: var(--highlight-colors);
+  width: 25%;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 50px;
+  border-radius: 5px;
 }
 
+.navitems li a {
+  color: var(--text-colors);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Hero Banner */
 .hero-banner {
-  background-image: url(../images/02-hero-bg.jpg);
+  background-image: linear-gradient(0deg, transparent, #3d6098), url(../images/02-hero-bg.jpg);
   height: 120px;
   background-size: cover;
+  position: relative;
 }
 
+article h2 {
+  background-color: var(--highlight-colors);
+  padding: 0 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+  border-radius: 5px;
+  font-size: 35px;
+}
+
+
 /* Main Page Content */
-/*Grid for the Whole page*/
+/* Grid for the Main Page Content. Using 2 Columns and 3 Rows */
 .page-wrapper {
   display: grid;
+  gap: 60px 0px;
+  padding-top: 30px;
+  padding-bottom: 50px;
   grid-template-columns: 25% 75%;
-  grid-template-rows: 300px 850px 300px;
+  grid-template-rows: 300px 900px 150px;
   grid-template-areas:
   "about aboutcontent"
   "work portfolio"
   "contact contactnav";
   }
+  
 #about {
   grid-area: about;
+  border-right: 4px solid var(--text-colors);
 }
 
 #aboutcontent {
   grid-area: aboutcontent;
+  margin-left: 3%;
+  width: 93%;
 }
 
 #work {
   grid-area: work;
+  border-right: 4px solid var(--text-colors);
 }
 
 #portfolio {
   grid-area: portfolio;
+  margin-left: 3%;
 }
 
 #contact {
   grid-area: contact;
+  border-right: 4px solid var(--text-colors);
 }
 
 #contactnav {
   grid-area: contactnav;
 }
 
+.page-section {
+  display: inline-block;
+  padding-right: 15px;
+  text-align: right;
+  margin-left: 45%;
+  font-size: 25px;
+}
+
+/* About Me Section */
+
 .profile-picture {
   width: 20%;
   float: left;
-  border: 4px solid blue;
+  border: 4px solid var(--highlight-colors);
   border-radius: 50%;
-  margin: 0 2% 0 3%;
+  margin: 0 2% 0 0%;
 }
 
-/* Portfolio Content */
+/* Page & Portfolio Content Section */
 
-/*#portfolio {
-  display: flex;
-} */
+/* Used Grids to define the presentation of the portfolio. Using 2 Columns and 3 Rows */
 
 #portfolio {
-  margin: 0px 5%;
+  margin: 0px 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 400px 200px 200px;
@@ -112,36 +169,470 @@ header {
 
 #portfolio-1 {
   grid-area: portfolio-1;
-  /* background-image: url(../images/02-portfolio-4.jpg); */
-  background-size: cover;
 }
 #portfolio-2 {
   grid-area: portfolio-2;
-  background-image: url(../images/02-portfolio-1.jpg);
-  background-size: cover;
 }
 #portfolio-3 {
   grid-area: portfolio-3;
-  background-image: url(../images/02-portfolio-2.jpg);
-  background-size: cover;
 }
 #portfolio-4 {
   grid-area: portfolio-4;
-  background-image: url(../images/02-portfolio-3.jpg);
-  background-size: cover;
 }
 #portfolio-5 {
   grid-area: portfolio-5;
-  background-image: url(../images/02-run-buddy.jpg);
-  background-size: cover;
-}
-img {
-  height:100px
 }
 
-
-/*
-figure {
+.portfolioitems img {
+  height: 100%;
   width: 100%;
+  border: 4px solid var(--highlight-colors);
+  border-radius: 5px;
+}
+
+figcaption {
+  display: inline-block;
+  background-color: var(--highlight-colors);  
   position: relative;
-} */
+  bottom: 70px;
+  padding-left: 15px;
+  padding-right: 8px;
+  border-radius: 5px;
+  /* margin-right: 180px; */
+  }
+  .portfolioitems :hover {
+    filter: sepia(15%);
+    opacity: 100%;
+    transition: all 1000ms ease-in-out;
+  }
+
+figcaption h3, figcaption p {
+  color: var(--text-colors);
+}
+
+/* Contact section Properties */
+#contactnav {
+  display: grid;
+  align-content: center;
+}
+.contactnavitems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  font-size: 25px;
+  font-weight: light bold;
+}
+
+.contactnavitems li a {
+  color: var(--text-colors);
+}
+
+/* Media Query for different Screen sizes - max-width: 600px and 1050px to allow for mobile and tablet optimisation */
+
+/* 600px */
+@media only screen and (max-width: 600px) {
+  /* Navigation Bar */
+
+header {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 1% 1% 0%;
+}
+
+.navitems {
+  display: flex;
+  justify-content: space-evenly;
+  width: 250px;
+  padding-right: 10px;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  }
+
+header h1 {
+  background-color: var(--highlight-colors);
+  width: 35%;
+  text-align: right;
+  padding-right: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.navitems li a {
+  color: var(--text-colors);
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Hero Banner */
+.hero-banner {
+  background-image: linear-gradient(0deg, transparent, #3d6098), url(../images/02-hero-bg.jpg);
+  height: 80px;
+  width: 100%;
+  background-size: cover;
+  position: relative;
+}
+
+article h2 {
+  background-color: var(--highlight-colors);
+  padding: 0 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 5%;
+  border-radius: 2px;
+  font-size: 20px;
+}
+
+/* Main Page Content */
+/* Grid for the Main Page Content. Still Using 2 Columns and 3 Rows. Changed the column split to account for new screen width.*/
+/* Made changes to borders, margins, paddings and text sizes*/
+.page-wrapper {
+  display: grid;
+  gap: 20px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 350px 800px 150px;
+  grid-template-areas:
+  "about aboutcontent"
+  "work portfolio"
+  "contact contactnav";
+  }
+  
+#about {
+  grid-area: about;
+  border-right: 2px solid var(--text-colors);
+}
+
+#aboutcontent {
+  grid-area: aboutcontent;
+  margin-left: 2%;
+  font-size: 13px;
+  width: 93%;
+}
+
+#work {
+  grid-area: work;
+  border-right: 2px solid var(--text-colors);
+}
+
+#portfolio {
+  grid-area: portfolio;
+  margin-left: 1.5%;
+  width: 91%;
+}
+
+#contact {
+  grid-area: contact;
+  border-right: 2px solid var(--text-colors);
+}
+
+#contactnav {
+  grid-area: contactnav;
+  width: 91%;
+}
+/* Gave the first column a background color to adapt for mobile viewing */
+.page-section {
+  display:flex;
+  align-items: baseline;
+  padding-left: 15px;
+  padding-top: 10px;
+  margin-left: 3%;
+  background-color: var(--text-colors);
+}
+
+.section-header {
+  font-size: 25px;
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+  color: var(--background-color);
+}
+
+/* About Me Section */
+
+.profile-picture {
+  width: 30%;
+  float: left;
+  border: 4px solid var(--highlight-colors);
+  border-radius: 50%;
+  margin: 0 2% 0 0%;
+}
+
+.about-content {
+  display: inline-block;
+}
+
+/* Page & Portfolio Content Section */
+
+/* Used Grids to define the presentation of the portfolio. Using 1 Columns and 5 Rows */
+/* Made the first project image bigger as per instructions */
+
+#portfolio {
+  margin: 0px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 150px 150px 150px 150px;
+  grid-template-areas: 
+  "portfolio-1"
+  "portfolio-2" 
+  "portfolio-3"
+  "portfolio-4" 
+  "portfolio-5";
+}
+
+#portfolio-1 {
+  grid-area: portfolio-1;
+}
+#portfolio-2 {
+  grid-area: portfolio-2;
+}
+#portfolio-3 {
+  grid-area: portfolio-3;
+}
+#portfolio-4 {
+  grid-area: portfolio-4;
+}
+#portfolio-5 {
+  grid-area: portfolio-5;
+}
+
+.portfolioitems img {
+  height: 100%;
+  width: 90%;
+  border: 4px solid var(--highlight-colors);
+  border-radius: 5px;
+}
+
+figcaption {
+  display: inline-block;
+  background-color: var(--highlight-colors);  
+  position: relative;
+  bottom: 60px;
+  padding-left: 10px;
+  padding-right: 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  /* margin-right: 180px; */
+  }
+  .portfolioitems :hover {
+    filter: sepia(15%);
+    opacity: 100%;
+    transition: all 1000ms ease-in-out;
+  }
+
+figcaption h3, figcaption p {
+  color: var(--text-colors);
+}
+
+/* Contact section Properties */
+#contactnav {
+  display: flex;
+  align-content: center;
+}
+.contactnavitems {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  justify-content: space-between;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  font-size: 12px;
+  font-weight: light bold;
+}
+}
+
+/* 1050px */
+@media only screen and (max-width: 1050px) and (min-width: 601px) {
+  /* Navigation Bar */
+  header {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 1% 1% 0%;
+  }
+  
+  .navitems {
+    display: flex;
+    justify-content: space-evenly;
+    width: 380px;
+    padding-right: 10px;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    }
+  
+  header h1 {
+    background-color: var(--highlight-colors);
+    width: 35%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 35px;
+    border-radius: 5px;
+  }
+  
+  .navitems li a {
+    color: var(--text-colors);
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  /* Hero Banner */
+  .hero-banner {
+    background-image: linear-gradient(0deg, transparent, #3d6098), url(../images/02-hero-bg.jpg);
+    height: 100px;
+    background-size: cover;
+    position: relative;
+  }
+  
+  article h2 {
+    background-color: var(--highlight-colors);
+    padding: 0 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 3%;
+    border-radius: 5px;
+    font-size: 25px;
+  }
+  
+  
+  /* Main Page Content */
+  /* Grid for the Main Page Content. Using 2 Columns and 3 Rows */
+  .page-wrapper {
+    display: grid;
+    gap: 45px 0px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 360px 800px 120px;
+    grid-template-areas:
+    "about aboutcontent"
+    "work portfolio"
+    "contact contactnav";
+    }
+    
+  #about {
+    grid-area: about;
+    border-right: 4px solid var(--text-colors);
+  }
+  
+  #aboutcontent {
+    grid-area: aboutcontent;
+    margin-left: 3%;
+  }
+  
+  #work {
+    grid-area: work;
+    border-right: 4px solid var(--text-colors);
+  }
+  
+  #portfolio {
+    grid-area: portfolio;
+    margin-left: 3%;
+  }
+  
+  #contact {
+    grid-area: contact;
+    border-right: 4px solid var(--text-colors);
+  }
+  
+  #contactnav {
+    grid-area: contactnav;
+  }
+  
+  .page-section {
+    display: inline-block;
+    padding-right: 5px;
+    text-align: right;
+    margin-left: 10%;
+    font-size: 18px;
+  }
+  
+  /* About Me Section */
+  
+  .profile-picture {
+    width: 28%;
+    float: left;
+    border: 4px solid var(--highlight-colors);
+    border-radius: 50%;
+    margin: 0 2% 0 0%;
+  }
+  
+  /* Page & Portfolio Content Section */
+  
+  /* Used Grids to define the presentation of the portfolio. Using 2 Columns and 3 Rows */
+  
+  #portfolio {
+    margin: 0px -15px;
+    width: 105%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px 200px 200px;
+    grid-template-areas: 
+    "portfolio-1 portfolio-1"
+    "portfolio-2 portfolio-3"
+    "portfolio-4 portfolio-5";
+  }
+  
+  #portfolio-1 {
+    grid-area: portfolio-1;
+  }
+  #portfolio-2 {
+    grid-area: portfolio-2;
+  }
+  #portfolio-3 {
+    grid-area: portfolio-3;
+  }
+  #portfolio-4 {
+    grid-area: portfolio-4;
+  }
+  #portfolio-5 {
+    grid-area: portfolio-5;
+  }
+  
+  .portfolioitems img {
+    height: 100%;
+    width: 100%;
+    border: 4px solid var(--highlight-colors);
+    border-radius: 5px;
+  }
+  
+  figcaption {
+    display: inline-block;
+    background-color: var(--highlight-colors);  
+    position: relative;
+    bottom: 60px;
+    padding-left: 10px;
+    padding-right: 8px;
+    border-radius: 5px;
+    }
+    .portfolioitems :hover {
+      filter: sepia(15%);
+      opacity: 100%;
+      transition: all 1000ms ease-in-out;
+    }
+  
+  figcaption h3, figcaption p {
+    color: var(--text-colors);
+    font-size: 14px;
+  }
+  
+  /* Contact section Properties */
+  #contactnav {
+    display: grid;
+    align-content: center;
+  }
+  .contactnavitems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    font-size: 15px;
+    font-weight: light bold;
+  }
+}
