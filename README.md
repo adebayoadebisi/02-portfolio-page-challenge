@@ -15,7 +15,11 @@ Page made in accordance to the acceptance criteria.
 - When the page is resized or viewed on various screens and devices then the layout is responsive and adapts to my viewport. Views optimised using Media Query: 360px-600px, 601px-1050px, 1051px-2500px and >2500px
 
 ## Demo Portfolio Page
-The following images shows the Demo Portfolio Page appearance in different device sizes.
+The following images shows the Demo Portfolio Page appearance in different device sizes and showcasing functionailty.
+
+![Demo Portfolio Page: Functionality](assets/images/portfolio-demo.gif)
+
+> **Note** This is a video of the Demo Portfolio Page at showing functionality.
 
 ![Demo Portfolio Page: 360px-600px](assets/images/Screenshot-max-600px.html.png)
 
@@ -40,3 +44,4 @@ Licensed under the MIT License
 URL: https://github.com/adebayoadebisi/02-portfolio-page-challenge 
 
 ## Deployed Web Application
+URL: https://adebayoadebisi.github.io/02-portfolio-page-challenge/
