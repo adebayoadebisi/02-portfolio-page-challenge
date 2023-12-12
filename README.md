@@ -3,7 +3,7 @@
 # Demo Portfolio Page
 
 ## Description
-A marketing agency, Horiseon, want a codebase that follows accessibility standards, so that their website is optimized for search engines.
+Made a Demo portfolio page using CSS and HTML. Applied the use of Grids and Media Query.
 
 ## Summary of Changes
 Page made in accordance to the acceptance criteria.
